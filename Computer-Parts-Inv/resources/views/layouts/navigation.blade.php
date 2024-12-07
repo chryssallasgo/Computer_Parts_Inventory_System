@@ -52,21 +52,26 @@
     </div>
 
 <!-- Footer -->
-<div class="absolute bottom-0 w-full px-3 py-4 bg-gray-900">
-    <div class="flex items-center space-x-3">
-        <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full">
-        <div class="relative">
-            <div class="flex items-center text-sm font-semibold text-wrap">
-                {{ Auth::user()->name }}
-                <x-nav-link :href="route('profile.edit')" class="w-10 h-10 mr-1 gear-icon">
-                    <img src="https://cdn-icons-png.flaticon.com/128/484/484562.png" alt="Gear Icon">
-                </x-nav-link>
-                <form method="POST" action="{{ route('logout') }}" class="w-10 h-10 space-y-2 logout-icon"> @csrf <x-nav-link :href="route('logout')" onclick="event.preventDefault();    this.closest('form').submit();"> <img src="https://cdn-icons-png.flaticon.com/128/18238/18238318.png" alt="Logout Icon"> 
-                </x-nav-link> 
-                </form>
-            </div>
-            <p class="text-xs">{{ Auth::user()->email }}</p>
+<div class="absolute bottom-0 w-full px-3 py-4 bg-neutral-800">
+    <div class="user-info">
+        <img src="https://cdn-icons-png.flaticon.com/128/1144/1144709.png" alt="User Avatar" class="w-10 h-10">
+        <div class="user-details">
+            <p class="text-sm font-semibold username">{{ Auth::user()->name }}</p>
+            <p class="text-xs email">{{ Auth::user()->email }}</p>
         </div>
+    </div>
+    <div class="icon-container">
+        <x-nav-link :href="route('profile.edit')" class="w-8 h-8 gear-icon ">
+            <img src="https://cdn-icons-png.flaticon.com/128/484/484562.png" alt="Gear Icon">
+            <p class="opacity">Edit Profile</p>
+        </x-nav-link>
+        <form method="POST" action="{{ route('logout') }}" class="logout-icon"> 
+            @csrf 
+            <x-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="w-8 h-8 "> 
+                <img src="https://cdn-icons-png.flaticon.com/128/18238/18238318.png" alt="Logout Icon">
+                <p class="opacity">Logout</p>
+            </x-nav-link> 
+        </form>
     </div>
 </div>
 
