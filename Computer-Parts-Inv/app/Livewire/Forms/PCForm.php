@@ -8,7 +8,7 @@ use Livewire\Form;
 
 class PCForm extends Form
 {
-    public ?PCPart $pcpart;
+    public ?PCPart $pcpart = null;
 
     #[Validate]
     public $pcpart_name;
@@ -18,12 +18,19 @@ class PCForm extends Form
 
     public function rules()
     {
-        return [
+        $rules = [
             'pcpart_name' => 'required|string|max:255',
             'pcpart_price' => 'required|numeric|min:0',
-            'partcategory_id' => 'required|exists:partcategory,id',
-            'manufacturer_id' => 'required|exists:manufacturer,id',
+            'partcategory_id' => 'required',
+            'manufacturer_id' => 'required',
         ];
+
+        if ($this->pcpart) {
+            // Modify rules based on existing item
+            $rules['pcpart_name'] = 'required|string|max:255|unique:pcpart,pcpart_name,' . $this->pcpart->id;
+        }
+
+        return $rules;
     }
 
     public function messages()
@@ -38,7 +45,7 @@ class PCForm extends Form
     {
         $this->pcpart = $pcpart;
         $this->pcpart_name = $pcpart->pcpart_name;
-        $this->pcpart_price = $pcpart->partprice;
+        $this->pcpart_price = $pcpart->pcpart_price;
         $this->partcategory_id = $pcpart->partcategory_id;
         $this->manufacturer_id = $pcpart->manufacturer_id;
     }

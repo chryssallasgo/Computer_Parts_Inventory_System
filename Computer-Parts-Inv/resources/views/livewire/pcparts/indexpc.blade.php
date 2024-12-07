@@ -63,7 +63,7 @@
                                             <td class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-neutral-200">{{ $pcpart->partcategory->name }}</td>
                                             <td class="px-6 py-4 text-sm text-gray-800 whitespace-wrap dark:text-neutral-200">{{ $pcpart->manufacturer->name }}</td>
                                             <td class="px-6 py-4 text-sm font-medium whitespace-nowrap text-end">
-                                              <a href="{{ route('pcparts.editpc', $pcpart) }}" wire:navigate class="inline-flex items-center border-transparent gap-x-2 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"><img src="https://cdn-icons-png.flaticon.com/128/8961/8961331.png" alt="Edit Icon" class="w-6 h-6"></a>
+                                              <a href="{{ route('pcparts.editpc', $pcpart->id) }}" wire:navigate class="inline-flex items-center border-transparent gap-x-2 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"><img src="https://cdn-icons-png.flaticon.com/128/8961/8961331.png" alt="Edit Icon" class="w-6 h-6"></a>
                                             <button type="button" 
                                               wire:click="delete({{$pcpart->id}})"
                                               wire:confirm="Are you sure you want to delete this student?"

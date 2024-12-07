@@ -18,9 +18,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/PCParts', PCParts\IndexPC::class)->name('pcparts.indexpc');
-    Route::get('/PCParts/CreatePC', PCParts\CreatePC::class)->name('pcparts.createpc');
-    Route::get('/pcparts/{pcpart}/editpc', EditPC::class)->name('pcparts.editpc');
+    Route::get('/pcparts', PCParts\IndexPC::class)->name('pcparts.indexpc');
+    Route::get('/pcparts/CreatePC', PCParts\CreatePC::class)->name('pcparts.createpc');
+    Route::get('/pcparts/editpc/{id}', EditPC::class)->name('pcparts.editpc');
 });
 
 require __DIR__.'/auth.php';

@@ -10,22 +10,17 @@ use Livewire\Component;
 
 class CreatePC extends Component
 {
-    public $PCform = [ 
-        'pcname' => '', 
-        'partcategory' => '', 
-        'pcpart_id' => '', 
-        'manufacturer_id' => '', 
-    ];
+
+    public PCForm $PCForm;
     //public Form $form;
  
     public $partcategory;
-    public $manufacturers = [];
+    public $manufacturer = [];
 
-    protected $rules = [ 
-        'PCform.pcpart_name' => 'required|string|max:255', 
-        'PCform.pcpart_price' => 'required|numeric', 
-        'PCform.partcategory_id' => 'required|integer', 
-        'PCform.manufacturer_id' => 'required|integer', ];
+    protected function rules()
+    {
+        return $this->PCForm->rules();    
+    }
 
     public function render()
     {
@@ -35,14 +30,14 @@ class CreatePC extends Component
     }
     public function mount() 
     { 
-        $this->manufacturers = Manufacturer::all(); 
+        $this->manufacturer = Manufacturer::all(); 
         $this->partcategory = PartCategory::all();
     }
 
     public function updated($property)
     {
-        if ($property === 'PCform.partcategory_id') {
-            $this->manufacturers = Manufacturer::where('partcategory_id', $this->PCform['partcategory_id'])->get();
+        if ($property === 'PCForm.partcategory_id') {
+            $this->manufacturer = Manufacturer::where('partcategory_id', $this->PCForm->partcategory_id)->get();
         }
 
         // if($property === 'form.section_id'){
@@ -52,11 +47,9 @@ class CreatePC extends Component
 
     public function store()
     {
-        $this->validate();
+        $validated = $this->PCForm->validate();
         
-        PCPart::create(
-            $this->PCform
-        );
+        PCPart::create($validated);
         
        flash()->success('Computer part added successfully');
         

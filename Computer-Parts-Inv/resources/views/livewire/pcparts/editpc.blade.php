@@ -17,7 +17,7 @@
                                     <input 
                                         type="text" 
                                         id="pcpart_name" 
-                                        wire:model="pcform.pcpart_name" 
+                                        wire:model.blur="pcform.pcpart_name" 
                                         class="block w-full px-4 py-3 text-sm rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 
                                         @error('pcform.pcpart_name') text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300 @enderror">
                                     @error('pcform.pcpart_name') <p class="mt-2 text-sm text-red-500">{{ $message }}</p> @enderror
@@ -28,7 +28,7 @@
                                         type="number" 
                                         step="1.00"
                                         id="pcpart_price" 
-                                        wire:model="pcform.pcpart_price" 
+                                        wire:model.blur="pcform.pcpart_price" 
                                         class="block w-full px-4 py-3 text-sm rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 
                                         @error('pcform.pcpart_price') text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300 @enderror">
                                     @error('pcform.pcpart_price') <p class="mt-2 text-sm text-red-500">{{ $message }}</p> @enderror
@@ -37,7 +37,7 @@
                                     <label for="partcategory_id" class="block mb-2 text-sm font-medium dark:text-white">Part Category</label>
                                     <select 
                                         id="partcategory_id" 
-                                        wire:model="pcform.partcategory_id" 
+                                        wire:model.live="pcform.partcategory_id" 
                                         class="block w-full px-4 py-3 text-sm rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 
                                         @error('pcform.partcategory_id') text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300 @enderror">
                                         <option value="">Select a Part Category</option>
@@ -51,7 +51,7 @@
                                     <label for="manufacturer_id" class="block mb-2 text-sm font-medium dark:text-white">Manufacturer</label>
                                     <select 
                                         id="manufacturer_id" 
-                                        wire:model="pcform.manufacturer_id" 
+                                        wire:model.live="pcform.manufacturer_id" 
                                         class="block w-full px-4 py-3 text-sm rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 
                                         @error('pcform.manufacturer_id') text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300 @enderror">
                                         <option value="">Select a Manufacturer</option>

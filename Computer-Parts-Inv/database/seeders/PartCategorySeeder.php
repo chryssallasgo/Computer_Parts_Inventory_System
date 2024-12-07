@@ -15,8 +15,8 @@ class PartCategorySeeder extends Seeder
 {
     public function run(): void
     {
-        $category = ['GPU', 'CPU', 'MOBO', 'RAM', 'SSD', 'HDD', 'PSU']; 
-        foreach ($category as $category) 
+        $categories = ['GPU', 'CPU', 'MOBO', 'RAM', 'SSD', 'HDD', 'PSU']; 
+        foreach ($categories as $category) 
         { 
             PartCategory::create(['name' => $category]);
         }     

@@ -21,28 +21,28 @@
                                     <input 
                                     type="text" 
                                     id="name" 
-                                    wire:model.blur="PCform.pcpart_name" 
+                                    wire:model.blur="PCForm.pcpart_name" 
                                     class="block w-full px-4 py-3 text-sm rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600 
-                                    @error('PCform.pcname')
+                                    @error('PCForm.pcpart_name')
                                         text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300
                                     @enderror
                                     ">
-                                    @error('PCform.pcpart_name')
+                                    @error('PCForm.pcpart_name')
                                         <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
                                     @enderror
                                 </div>
                                 <div>
-                                    <label for="price" class="block mb-2 text-sm font-medium dark:text-white">Price</label>
+                                    <label for="pcpart_price" class="block mb-2 text-sm font-medium dark:text-white">Price</label>
                                     <input 
-                                    type="price" 
-                                    id="price"
-                                    wire:model.blur="PCform.pcpart_price" 
+                                    type="number" 
+                                    id="pcpart_price"
+                                    wire:model.blur="PCForm.pcpart_price" 
                                     class="block w-full px-4 py-3 text-sm rounded-lg disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500                                     
-                                    @error('PCform.pcpart_price')
+                                    @error('PCForm.pcpart_price')
                                         text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300
                                     @enderror
                                     ">
-                                    @error('PCform.pcpart_price')
+                                    @error('PCForm.pcpart_price')
                                         <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -50,9 +50,9 @@
                                     <label for="partcategory_id" class="block mb-2 text-sm font-medium dark:text-white">Part Category</label>
                                     <select 
                                     id="partcategory_id" 
-                                    wire:model.live="PCform.partcategory_id"
+                                    wire:model.live="PCForm.partcategory_id"
                                     class="block w-full px-4 py-3 text-sm rounded-lg pe-9 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600
-                                        @error('PCform.partcategory_id')
+                                        @error('PCForm.partcategory_id')
                                             text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300
                                         @enderror
                                     ">
@@ -61,7 +61,7 @@
                                             <option value="{{ $partcategory->id }}">{{ $partcategory->name }}</option>
                                         @endforeach
                                     </select>
-                                        @error('PCform.partcategory_id')
+                                        @error('PCForm.partcategory_id')
                                         <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                 </div>
@@ -69,18 +69,18 @@
                                     <label for="manufacturer" class="block mb-2 text-sm font-medium dark:text-white">Manufacturer</label>
                                     <select 
                                     id="manufacturer" 
-                                    wire:model.live="PCform.manufacturer_id"
+                                    wire:model.live="PCForm.manufacturer_id"
                                     class="block w-full px-4 py-3 text-sm rounded-lg pe-9 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600                                    
-                                        @error('PCform.manufacturer_id')
+                                        @error('PCForm.manufacturer_id')
                                             text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300
                                         @enderror
                                     ">
                                     <option value="">Select Manufacturer</option>
-                                        @foreach ($manufacturers as $manufacturer)
+                                        @foreach ($manufacturer as $manufacturer)
                                             <option value="{{ $manufacturer->id }}">{{ $manufacturer->name }}</option>
                                         @endforeach
                                     </select>
-                                        @error('PCform.manufacturer_id')
+                                        @error('PCForm.manufacturer_id')
                                         <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
                                         @enderror
                                 </div>

@@ -32,13 +32,13 @@
             <div x-show="openVendors" class="pl-6 mt-2 space-y-2">
                 <x-nav-link :href="route('pcparts.indexpc')" class="block px-4 py-2 hover:bg-gray-700">{{ __('List of Computer Parts') }}</x-nav-link>
             </div>
-            <div x-show="openVendors" class="pl-6 mt-2 space-y-2">
+            {{-- <div x-show="openVendors" class="pl-6 mt-2 space-y-2">
                 <x-nav-link :href="route('pcparts.createpc')" class="block px-4 py-2 hover:bg-gray-700">{{ __('Add Computer Part') }}</x-nav-link>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Services Section -->
-        <div>
+        {{-- <div>
             <button @click="openServices = !openServices" class="flex items-center justify-between w-full px-4 py-2 rounded-md hover:bg-orange-500">
                 <span>Services</span>
                 <svg :class="{ 'rotate-180': openServices }" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +48,7 @@
             <div x-show="openServices" class="pl-6 mt-2 space-y-2">
 
             </div>
-        </div>
+        </div> --}}
     </div>
 
 <!-- Footer -->

@@ -21,17 +21,18 @@ class PCPartFactory extends Factory
 
         $this->faker->addProvider(new CustomFakerProvider($this->faker));
 
-        $pcpartname = $this->faker->pcpart_name(); 
-        $partcategory = $this->faker->partcategory($pcpartname);
+        $pcpart_name = $this->faker->pcpart_name(); 
+        $partcategory = $this->faker->partcategory($pcpart_name);
 
         $partCategoryModel = \App\Models\PartCategory::firstOrCreate(['name' => $partcategory]);
         
         return [
             
-            'pcpart_name' => $pcpartname,
+            'pcpart_name' => $pcpart_name,
+            'pcpart_price' => $this->faker->randomFloat(2, 8000, 11000),
             'partcategory_id' => $partCategoryModel->id,
             'manufacturer_id' => \App\Models\Manufacturer::factory(),
-            'pcpart_price' => $this->faker->randomFloat(2, 8000, 11000)
+            
         ];
     }
 }

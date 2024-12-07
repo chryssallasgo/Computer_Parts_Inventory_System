@@ -18,7 +18,7 @@ class CustomFakerProvider extends Base
 
     public function manufacturer()
     {
-        $manufacturers = ['Nvidia', 'Intel', 'AMD'];    //'Gigabyte', 'Kingston', 'MSI', 'EVGA', 'ASUS', 'AsRock', 'Western Digital', 'Samsung'
+        $manufacturers = ['Nvidia', 'Intel', 'AMD', 'Gigabyte', 'Kingston', 'MSI', 'EVGA', 'ASUS', 'AsRock', 'Western Digital', 'Samsung'];    
          return $this->generator->randomElement($manufacturers);
     }
 
@@ -26,9 +26,9 @@ class CustomFakerProvider extends Base
     { 
          return $this->generator->randomElement(array_keys($this->partcategory)); 
     } 
-    public function partcategory($pcpartname) 
+    public function partcategory($pcpart_name) 
     {
-         return $this->partcategory[$pcpartname] ?? 'Unknown'; 
+         return $this->partcategory[$pcpart_name] ?? 'Unknown'; 
     }
 }
 
