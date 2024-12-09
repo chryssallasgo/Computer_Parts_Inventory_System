@@ -15,7 +15,7 @@
             </div>
               {{-- Search students --}}
               <div>
-                <x-search placeholder="Search students.." wire:model.live.debounce.500="search" />
+                <x-search placeholder="Search Computer Parts.." wire:model.live.debounce.500="search" />
             </div>
             {{-- end search --}}
             <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
