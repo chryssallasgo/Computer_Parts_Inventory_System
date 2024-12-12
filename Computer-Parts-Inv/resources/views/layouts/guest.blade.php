@@ -14,7 +14,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans antialiased text-gray-900">
+<body class="font-sans antialiased text-gray-800">
     <div class="relative flex flex-col items-center min-h-screen pt-6 sm:flex-row sm:justify-end sm:pt-0">
         <!-- Background Layers -->
         <div class="absolute inset-0 z-10 bg-gray-900 bg-opacity-50 backdrop-blur-md clip-path-custom"></div>
