@@ -4,7 +4,7 @@
   
             <div class="flex justify-between p-4 item-center">
                 <div>
-                    <h1 class="text-2xl font-bold text-gray-800 dark:text-neutral-200">Computer Parts</h1>
+                    <h1 class="text-2xl font-bold text-gray-200 dark:text-neutral-200">Computer Parts</h1>
                     <p class="text-sm text-gray-500 dark:text-neutral-400">List of Computer Parts</p>
                 </div>
                <div>
